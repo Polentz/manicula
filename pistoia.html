@@ -17,10 +17,6 @@
 </head>
 
 <body>
-    <!-- <div class="load">
-        <img src="assets/uploads/manicula-enrico.svg">
-        <img src="assets/uploads/manicula-chiara.svg">
-    </div> -->
     <nav class="nav">
         <ul class="nav__wrapper">
             <li class="nav__link--pages">Pistoia</li>
@@ -94,13 +90,11 @@
         object.addEventListener("mouseenter", () => {
             overlay.forEach(element => {
                 element.style.zIndex = "-1";
-                // element.style.opacity = "0";
             });
         })
         object.addEventListener("mouseleave", () => {
             overlay.forEach(element => {
                 element.style.zIndex = "inherit";
-                // element.style.opacity = "1";
             });
         })
 

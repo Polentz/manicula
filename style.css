@@ -1,0 +1,254 @@
+:root {
+    --bg-color: #252525;
+    --txt-color: #F6F1E6;
+    --white: #fff;
+    --black: #000;
+    --nav-width: calc(8vw + 1rem);
+    --margin-t-b: calc(6vh + 1rem);
+    --txt-large-copy: calc(1vw + 3rem);
+    --txt-medium-copy: calc(1vw + 1.5rem);
+    --txt-small-copy: 1rem;
+    --txt-nav: .9rem;
+    --border: solid 1px var(--black);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+body {
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+    background-color: var(--bg-color);
+}
+
+.load {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+    animation: fadeIn 2s ease 1 reverse forwards;
+}
+
+.load img {
+    width: 37.5vw;
+}
+
+.nav {
+    font-family: "Oswald", sans-serif;
+    font-weight: 300;
+    font-size: var(--txt-nav);
+    color: var(--txt-color);
+    text-transform: uppercase;
+    width: var(--nav-width);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: var(--margin-t-b);
+    position: fixed;
+    top: 0;
+    z-index: 9;
+}
+
+.nav__wrapper {
+    height: 100%;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    display: flex;
+    flex-direction: row;
+    column-gap: 4rem;
+    row-gap: .5rem;
+    flex-wrap: wrap;
+}
+
+.nav__link {
+    opacity: 0;
+    animation: fadeIn 2s ease 1 forwards;
+}
+
+.nav__link:nth-child(odd) {
+    animation-delay: 1.75s;
+}
+
+.nav__link:nth-child(even) {
+    animation-delay: 2s;
+}
+
+.content {
+    opacity: 0;
+    animation: fadeIn 2s ease 1 forwards;
+    animation-delay: 1.5s;
+}
+
+.content__copy {
+    font-family: "Fira Sans", sans-serif;
+    color: var(--txt-color);
+    margin: var(--margin-t-b) var(--nav-width);
+}
+
+.content__copy--main {
+    font-weight: 300;
+    font-size: var(--txt-large-copy);
+    line-height: 1.1;
+}
+
+.content__copy--small {
+    font-weight: 300;
+    font-size: var(--txt-medium-copy);
+    line-height: 1.1;
+}
+
+.content__copy--main p,
+.content__copy--small p {
+    margin-bottom: 3rem;
+}
+
+.content__over {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+
+.content__over img {
+    width: 40vw;
+}
+
+.content__over--open {
+    position: relative;
+}
+
+.content__over--open::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: var(--txt-color);
+    position: absolute;
+    left: 0%;
+    bottom: 8px;
+}
+
+.footer {
+    font-family: "Oswald", sans-serif;
+    font-weight: 300;
+    font-size: var(--txt-nav);
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin: var(--margin-t-b) var(--nav-width);
+}
+
+.nav--pages {
+    position: absolute;
+    top: var(--margin-t-b);
+    left: 0;
+    z-index: 9;
+    transition: all .5s ease;
+}
+
+.nav--pages img {
+    display: block;
+    width: 15vw;
+}
+
+.content__graphs {
+    height: 100vh;
+    background-color: var(--white);
+    margin-left: var(--nav-width);
+    font-family: "Fira Sans", sans-serif;
+    color: var(--bg-color);
+    background-image: url("assets/uploads/manicula-test02.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: margin-left .5s ease;
+}
+
+.content__graphs--bookmark {
+    width: 20vw;
+    height: 100%;
+    overflow-y: scroll;
+    padding: 1rem;
+    background-color: var(--txt-color);
+    border: var(--border);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.content__graphs--bookmark::-webkit-scrollbar {
+    display: none;
+}
+
+.bookmark__copy {
+    margin-bottom: 3rem;
+}
+
+.bookmark__copy:last-child {
+    margin-bottom: 0;
+}
+
+.ui--enlarge {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+    z-index: 9;
+}
+
+.content__graphs.enlarge {
+    margin-left: 0;
+}
+
+.ui--next {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    cursor: pointer;
+    z-index: 9;
+}
+
+#enlarge {
+    transition: all .5s ease;
+}
+
+#close {
+    pointer-events: none;
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+#close.visible {
+    pointer-events: all;
+    opacity: 1;
+}
+
+#enlarge.hide {
+    pointer-events: none;
+    opacity: 0;
+}

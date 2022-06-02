@@ -6,12 +6,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manicula</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400;1,500&family=Oswald:wght@300;400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    This is Manicula
+    <div class="load">
+        <img src="assets/uploads/manicula-enrico.svg">
+        <img src="assets/uploads/manicula-chiara.svg">
+    </div>
+    <nav class="nav">
+        <ul class="nav__wrapper">
+            <li class="nav__link"><a href="pistoia.html">Pistoia</a></li>
+        </ul>
+    </nav>
+    <main class="content">
+        <div class="content__over">
+            <img src="assets/uploads/manicula-enrico-framed.svg">
+            <img src="assets/uploads/manicula-chiara-framed.svg">
+        </div>
+        <section class="content__copy">
+            <div class="content__copy--main">
+                <p>Manicula is a project by Enrico Malatesta and Chiara Pavolucci. It consists of a collection of
+                    listening exercises/scores and is aimed at investigating the acoustic phenomena present in some
+                    parts of the city; the areas of activation of the practices are not declared, but indicated by a
+                    <span class="content__over--open">reference symbol</span> *. The project is a sort of treasure hunt
+                    and does not require the presence and mediation of a performer/artist/guide and there is no personal
+                    interaction; each individual decides how to undertake the search for spaces and how to use the
+                    available scores to investigate the relationship between sound and space through the use of their
+                    body, voice or simple tools.
+                </p>
+
+                <p>Manicula is an open project that includes, in addition to the annotations and exercises developed on
+                    site by the author, a series of contributions by external artists and researchers who investigate
+                    the practices of active listening, the relationship between sound, body and the city, with the
+                    intent of offering multiple starting points to the participants; no specific knowledge or skills are
+                    required to engage in the proposed listening practices; scores and readers encourage individual
+                    initiative towards observation and the intuitive acquisition of the potential of sound.</p>
+            </div>
+
+            <div class="content__copy--small">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Nibh cras pulvinar mattis nunc sed blandit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Nibh cras pulvinar mattis nunc sed blandit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Nibh cras pulvinar mattis nunc sed blandit.</p>
+
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="colophon">
+            <p>© 2022</p>
+        </div>
+    </footer>
+    <script>
+        const object = document.querySelector(".content__over--open");
+        const overlay = document.querySelector(".content__over");
+        object.addEventListener("mouseenter", () => {
+            overlay.style.opacity = "1"
+        })
+        object.addEventListener("mouseleave", () => {
+            overlay.style.opacity = "0"
+        })
+    </script>
 </body>
 
 </html>

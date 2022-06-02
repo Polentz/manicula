@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manicula | Pistoia</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400;1,500&family=Oswald:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- <div class="load">
+        <img src="assets/uploads/manicula-enrico.svg">
+        <img src="assets/uploads/manicula-chiara.svg">
+    </div> -->
+    <nav class="nav">
+        <ul class="nav__wrapper">
+            <li class="nav__link--pages">Pistoia</li>
+            <li class="nav__link--pages"><a href="">Info</a></li>
+            <li class="nav__link--pages"><a href="javascript:window.history.back();">Back</a></li>
+        </ul>
+    </nav>
+    <nav class="nav--pages">
+        <img src="assets/uploads/manicula-enrico.svg">
+        <img src="assets/uploads/manicula-chiara.svg">
+    </nav>
+    <div class="ui--enlarge" id="enlarge">
+        <img src="assets/ui/enlarge.svg">
+    </div>
+    <div class="ui--enlarge" id="close">
+        <img src="assets/ui/close.svg">
+    </div>
+    <!-- <div class="ui--next" id="next">
+        <img src="assets/ui/next.svg">
+    </div> -->
+    <main class="content--">
+        <section class="content__graphs">
+            <div class="content__graphs--bookmark">
+                <div class="bookmark__copy">
+                    <p>Hand clapping it is also used to teach phonological awareness to students learning the ways words
+                        are constructed. They often clap out syllables to learn to break words into their component
+                        sounds.</p>
+                </div>
+                <div class="bookmark__copy">
+                    <p>Lievemente sprofondato nella sabbia, lavandomi il volto nell'acqua della Brana, raccolgo una
+                        piccola struttura, rigida e dura, con un incavo traslucido, come fosse una conchiglia. La tengo
+                        nel palmo, bagnato, e alzando il braccio rivolgo la parola a Chiara; il nostro discorso è
+                        disimpegnato, e la superficie alle sue spalle, un muro, entra in risonanza con le parole che
+                        contengono molte "a", mentre si sgretola in terra ocra.</p>
+                </div>
+                <div class="bookmark__copy">
+                    <p>ore 21:37</p>
+                    <p>6 gradi centigradi circa</p>
+                </div>
+                <div class="bookmark__copy">
+                    <p>Il percorso lungo il torrente Brana fiancheggia un imponente muro di pietre e dall'altra sponda
+                        una ripetizione continua, ritmica, di edifici di edilizia popolare.</p>
+                </div>
+                <!-- extra text repeated -->
+                <div class="bookmark__copy">
+                    <p>Hand clapping it is also used to teach phonological awareness to students learning the ways words
+                        are constructed. They often clap out syllables to learn to break words into their component
+                        sounds.</p>
+                </div>
+                <div class="bookmark__copy">
+                    <p>Lievemente sprofondato nella sabbia, lavandomi il volto nell'acqua della Brana, raccolgo una
+                        piccola struttura, rigida e dura, con un incavo traslucido, come fosse una conchiglia. La tengo
+                        nel palmo, bagnato, e alzando il braccio rivolgo la parola a Chiara; il nostro discorso è
+                        disimpegnato, e la superficie alle sue spalle, un muro, entra in risonanza con le parole che
+                        contengono molte "a", mentre si sgretola in terra ocra.</p>
+                </div>
+                <div class="bookmark__copy">
+                    <p>ore 21:37</p>
+                    <p>6 gradi centigradi circa</p>
+                </div>
+                <div class="bookmark__copy">
+                    <p>Il percorso lungo il torrente Brana fiancheggia un imponente muro di pietre e dall'altra sponda
+                        una ripetizione continua, ritmica, di edifici di edilizia popolare.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        const object = document.querySelector(".content__graphs--bookmark");
+        const overlay = document.querySelectorAll(".nav--pages");
+        object.addEventListener("mouseenter", () => {
+            overlay.forEach(element => {
+                element.style.zIndex = "-1";
+                // element.style.opacity = "0";
+            });
+        })
+        object.addEventListener("mouseleave", () => {
+            overlay.forEach(element => {
+                element.style.zIndex = "inherit";
+                // element.style.opacity = "1";
+            });
+        })
+
+        const btnEnlarge = document.getElementById("enlarge");
+        const btnClose = document.getElementById("close");
+        const element = document.querySelector(".content__graphs");
+        const nav = document.querySelectorAll(".nav--pages, .nav");
+        btnEnlarge.addEventListener("click", () => {
+            nav.forEach(n => {
+                n.style.opacity = "0";
+                n.style.pointerEvents = "none";
+            });
+            btnEnlarge.classList.add("hide");
+            setTimeout(() => {
+                element.classList.add("enlarge");
+                btnClose.classList.add("visible");
+
+            }, 300);
+        })
+        btnClose.addEventListener("click", () => {
+            element.classList.remove("enlarge");
+            btnClose.classList.remove("visible");
+            setTimeout(() => {
+                nav.forEach(n => {
+                    n.style.opacity = "1";
+                    n.style.pointerEvents = "all";
+                });
+                btnEnlarge.classList.remove("hide");
+            }, 300);
+        })
+    </script>
+</body>
+
+</html>

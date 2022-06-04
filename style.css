@@ -61,7 +61,7 @@ body {
     padding-bottom: var(--margin-t-b);
     position: fixed;
     top: 0;
-    z-index: 9;
+    z-index: 2;
 }
 
 .nav__wrapper {
@@ -76,6 +76,7 @@ body {
 }
 
 .nav__link {
+    cursor: pointer;
     opacity: 0;
     animation: fadeIn 2s ease 1 forwards;
 }
@@ -89,9 +90,16 @@ body {
 }
 
 .content {
+    position: relative;
     opacity: 0;
     animation: fadeIn 2s ease 1 forwards;
     animation-delay: 1.5s;
+}
+
+.--fix-height {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
 }
 
 .content__copy {
@@ -114,7 +122,17 @@ body {
 
 .content__copy--main p,
 .content__copy--small p {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+}
+
+.content__copy--images {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.content__copy--images img {
+    width: 72px;
 }
 
 .content__over {
@@ -155,6 +173,7 @@ body {
     font-weight: 300;
     font-size: var(--txt-nav);
     text-transform: uppercase;
+    color: var(--txt-color);
     display: flex;
     justify-content: center;
     gap: 4rem;
@@ -164,30 +183,47 @@ body {
 .nav--pages {
     position: absolute;
     top: var(--margin-t-b);
-    left: 0;
-    z-index: 9;
+    left: 1rem;
+    z-index: 2;
     transition: all .5s ease;
 }
 
-.nav--pages img {
-    display: block;
-    width: 15vw;
+@keyframes goBehind {
+    0% {
+        z-index: 3;
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        z-index: -1;
+        opacity: 1;
+    }
 }
 
-.content__graphs {
+.nav--pages.behind {
+    animation: goBehind .5s ease forwards 1;
+}
+
+.nav--pages img {
+    cursor: pointer;
+    display: block;
+    width: 12vw;
+}
+
+.content__main {
     height: 100vh;
     background-color: var(--white);
     margin-left: var(--nav-width);
     font-family: "Fira Sans", sans-serif;
     color: var(--bg-color);
-    background-image: url("assets/uploads/manicula-test02.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
     transition: margin-left .5s ease;
 }
 
-.content__graphs--bookmark {
+.content__main--bookmark {
     width: 20vw;
     height: 100%;
     overflow-y: scroll;
@@ -195,10 +231,8 @@ body {
     background-color: var(--txt-color);
     border: var(--border);
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.content__graphs--bookmark::-webkit-scrollbar {
-    display: none;
+    position: relative;
+    z-index: 2;
 }
 
 .bookmark__copy {
@@ -209,35 +243,59 @@ body {
     margin-bottom: 0;
 }
 
-.ui--enlarge {
+.content__main--table {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.table__wrapper {
+    overflow-x: scroll;
+    display: flex;
+}
+
+.table__wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.table__wrapper img {
+    width: 100%;
+}
+
+.ui-btn {
     width: 24px;
     height: 24px;
     position: absolute;
+    right: 2rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#info--close,
+#manicula-e--close,
+#manicula-c--close {
     top: 2rem;
-    right: 2rem;
-    cursor: pointer;
-    z-index: 9;
 }
 
-.content__graphs.enlarge {
-    margin-left: 0;
-}
-
-.ui--next {
-    width: 24px;
-    height: 24px;
-    position: absolute;
+#next {
     bottom: 2rem;
-    right: 2rem;
-    cursor: pointer;
-    z-index: 9;
 }
 
 #enlarge {
+    top: 2rem;
     transition: all .5s ease;
 }
 
+#enlarge.hide {
+    pointer-events: none;
+    opacity: 0;
+}
+
 #close {
+    top: 2rem;
     pointer-events: none;
     opacity: 0;
     transition: all .5s ease;
@@ -248,7 +306,61 @@ body {
     opacity: 1;
 }
 
-#enlarge.hide {
-    pointer-events: none;
-    opacity: 0;
+.content__main.enlarge {
+    margin-left: 0;
+}
+
+.content__info {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 400;
+    color: var(--bg-color);
+    background-color: var(--white);
+    border: var(--border);
+    margin-left: var(--nav-width);
+    padding: var(--margin-t-b) var(--nav-width);
+    height: 100vh;
+    overflow-y: scroll;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+#info--block {
+    transform: translateX(100%);
+    transition: transform .5s ease;
+}
+
+#manicula-e--block {
+    transform: translateY(100%);
+    transition: transform .5s ease;
+}
+
+#manicula-c--block {
+    transform: translateY(-100%);
+    transition: transform .5s ease;
+}
+
+#info--block.slide-in,
+#manicula-e--block.slide-in,
+#manicula-c--block.slide-in {
+    transform: none;
+}
+
+.content__main--bookmark::-webkit-scrollbar,
+.content__info::-webkit-scrollbar {
+    width: 1px;
+}
+
+.content__main--bookmark::-webkit-scrollbar-track {
+    background: var(--txt-color);
+}
+
+.content__info::-webkit-scrollbar-track {
+    background: var(--white);
+}
+
+.content__main--bookmark::-webkit-scrollbar-thumb,
+.content__info::-webkit-scrollbar-thumb {
+    background: var(--black);
 }

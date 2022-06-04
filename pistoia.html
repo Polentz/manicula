@@ -19,27 +19,27 @@
 <body>
     <nav class="nav">
         <ul class="nav__wrapper">
-            <li class="nav__link--pages">Pistoia</li>
-            <li class="nav__link--pages"><a href="">Info</a></li>
-            <li class="nav__link--pages"><a href="javascript:window.history.back();">Back</a></li>
+            <li>Pistoia</li>
+            <li class="nav__link" id="info--btn">Info</li>
+            <li class="nav__link"><a href="index.html">Back</a></li>
         </ul>
     </nav>
     <nav class="nav--pages">
-        <img src="assets/uploads/manicula-enrico.svg">
-        <img src="assets/uploads/manicula-chiara.svg">
+        <img src="assets/uploads/manicula-enrico.svg" id="manicula-e--btn">
+        <img src="assets/uploads/manicula-chiara.svg" id="manicula-c--btn">
     </nav>
-    <div class="ui--enlarge" id="enlarge">
-        <img src="assets/ui/enlarge.svg">
-    </div>
-    <div class="ui--enlarge" id="close">
-        <img src="assets/ui/close.svg">
-    </div>
-    <!-- <div class="ui--next" id="next">
-        <img src="assets/ui/next.svg">
-    </div> -->
-    <main class="content--">
-        <section class="content__graphs">
-            <div class="content__graphs--bookmark">
+    <main class="content --fix-height">
+        <div class="ui-btn" id="enlarge">
+            <img src="assets/ui/enlarge.svg">
+        </div>
+        <div class="ui-btn" id="close">
+            <img src="assets/ui/close.svg">
+        </div>
+        <div class="ui-btn" id="next">
+            <img src="assets/ui/next.svg">
+        </div>
+        <section class="content__main">
+            <div class="content__main--bookmark">
                 <div class="bookmark__copy">
                     <p>Hand clapping it is also used to teach phonological awareness to students learning the ways words
                         are constructed. They often clap out syllables to learn to break words into their component
@@ -82,26 +82,93 @@
                         una ripetizione continua, ritmica, di edifici di edilizia popolare.</p>
                 </div>
             </div>
+            <div class="content__main--table">
+                <div class="table__wrapper">
+                    <img src="assets/uploads/manicula-test01.jpg">
+                    <img src="assets/uploads/manicula-test02.jpg">
+                    <img src="assets/uploads/manicula-test03.jpg">
+                    <img src="assets/uploads/manicula-test04.jpg">
+                    <img src="assets/uploads/manicula-test05.jpg">
+                </div>
+            </div>
+        </section>
+
+        <section class="content__info" id="info--block">
+            <div class="ui-btn" id="info--close">
+                <img src="assets/ui/arrow-left.svg">
+            </div>
+            <div class="content__copy--main">
+                <p>Qui si trovano le informazioni sui luoghi e gli enti ospitanti.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Nibh cras pulvinar mattis nunc sed blandit. Enim diam vulputate ut pharetra
+                    sit.</p>
+            </div>
+            <div class="content__copy--small">
+                <p>Qui si trovano le informazioni sui luoghi e gli enti ospitanti.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Nibh cras pulvinar mattis nunc sed blandit. Enim diam vulputate ut pharetra
+                    sit.</p>
+            </div>
+            <div class="content__copy--images">
+                <img src="assets/uploads/manicula-chiara-framed.svg">
+                <img src="assets/uploads/manicula-chiara-framed.svg">
+            </div>
+        </section>
+
+        <section class="content__info" id="manicula-e--block">
+            <div class="ui-btn" id="manicula-e--close">
+                <img src="assets/ui/arrow-down.svg">
+            </div>
+            <div class="content__copy--main">
+                <p>Hand Clapping<br>
+                    around the symbol and listen<br>
+                    to the acoustic phenomena that emerges from the energy created by your hands</p>
+                <p>Eco<br>
+                    Reverberation</p>
+                <p>appears and decay in different configurations<br>
+                    embedded in the background noise of the city.</p>
+                <p>Stay still, or keep walking.</p>
+            </div>
+        </section>
+
+        <section class="content__info" id="manicula-c--block">
+            <div class="ui-btn" id="manicula-c--close">
+                <img src="assets/ui/arrow-up.svg">
+            </div>
+            <div class="content__copy--main">
+                <p>Qui si trova la descrizione del simbolo di Chiara</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.</p>
+                <p>Nibh cras pulvinar mattis nunc sed blandit.</p>
+            </div>
         </section>
     </main>
     <script>
-        const object = document.querySelector(".content__graphs--bookmark");
+        const object = document.querySelector(".content__main--bookmark");
         const overlay = document.querySelectorAll(".nav--pages");
-        object.addEventListener("mouseenter", () => {
-            overlay.forEach(element => {
-                element.style.zIndex = "-1";
-            });
-        })
-        object.addEventListener("mouseleave", () => {
-            overlay.forEach(element => {
-                element.style.zIndex = "inherit";
-            });
-        })
-
         const btnEnlarge = document.getElementById("enlarge");
         const btnClose = document.getElementById("close");
-        const element = document.querySelector(".content__graphs");
+        const content = document.querySelector(".content__main");
         const nav = document.querySelectorAll(".nav--pages, .nav");
+        const btnNext = document.getElementById("next");
+        const scrollContainer = document.querySelector(".table__wrapper");
+
+        object.addEventListener("mouseenter", () => {
+            if (content.classList.contains("enlarge")) {
+                return false
+            } else {
+                overlay.forEach(element => {
+                    element.classList.add("behind");
+                });
+            }
+        })
+
+        object.addEventListener("mouseleave", () => {
+            overlay.forEach(element => {
+                element.classList.remove("behind");
+            });
+        });
+
         btnEnlarge.addEventListener("click", () => {
             nav.forEach(n => {
                 n.style.opacity = "0";
@@ -109,13 +176,14 @@
             });
             btnEnlarge.classList.add("hide");
             setTimeout(() => {
-                element.classList.add("enlarge");
+                content.classList.add("enlarge");
                 btnClose.classList.add("visible");
-
+                scrollContainer.scrollLeft = 0;
             }, 300);
         })
+
         btnClose.addEventListener("click", () => {
-            element.classList.remove("enlarge");
+            content.classList.remove("enlarge");
             btnClose.classList.remove("visible");
             setTimeout(() => {
                 nav.forEach(n => {
@@ -123,8 +191,57 @@
                     n.style.pointerEvents = "all";
                 });
                 btnEnlarge.classList.remove("hide");
+                scrollContainer.scrollLeft = 0;
             }, 300);
-        })
+        });
+
+        btnNext.addEventListener("click", () => {
+            let responsiveDistance = content.innerWidth || content.clientWidth;
+            console.log(responsiveDistance);
+            scrollContainer.scrollBy({
+                left: responsiveDistance,
+                behavior: "instant"
+            });
+        });
+
+        openOnClick("info--btn", "info--block", "slide-in");
+        openOnClick("manicula-e--btn", "manicula-e--block", "slide-in");
+        openOnClick("manicula-c--btn", "manicula-c--block", "slide-in");
+
+        closeOnClick("info--close", "info--block", "slide-in");
+        closeOnClick("manicula-e--close", "manicula-e--block", "slide-in");
+        closeOnClick("manicula-c--close", "manicula-c--block", "slide-in");
+
+        closeAll(".nav, .nav--pages", ".content__info", "slide-in");
+
+        function openOnClick(trigger, section, className) {
+            document.getElementById(trigger).addEventListener("click", (event) => {
+                document.getElementById(section).classList.toggle(className);
+                event.stopPropagation();
+            })
+        }
+
+        function closeOnClick(trigger, section, className) {
+            document.getElementById(trigger).addEventListener("click", (event) => {
+                document.getElementById(section).classList.remove(className);
+                event.stopPropagation();
+            })
+        }
+
+        function closeAll(trigger, sections, className) {
+            const navTags = document.querySelectorAll(trigger);
+            navTags.forEach(navTag => {
+                navTag.addEventListener("click", (event) => {
+                    const allInfos = document.querySelectorAll(sections);
+                    allInfos.forEach(info => {
+                        if (info.classList.contains(className)) {
+                            info.classList.remove(className);
+                            event.stopPropagation();
+                        }
+                    });
+                });
+            })
+        }
     </script>
 </body>
 

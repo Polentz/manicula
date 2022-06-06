@@ -22,8 +22,28 @@
     }
 }
 
+@keyframes moveText {
+    0% {
+        bottom: -0.2em;
+        opacity: 1;
+    }
+
+    50% {
+        bottom: 0.2em;
+    }
+
+    100% {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+.animate {
+    animation: fadeIn .5s 3s forwards;
+}
+
 body {
-    width: 100%;
+    /* width: 100%; */
     height: auto;
     overflow-x: hidden;
     background-color: var(--bg-color);
@@ -125,6 +145,14 @@ body {
     margin-bottom: 2rem;
 }
 
+.content--serif {
+    font-style: italic;
+    font-weight: 200;
+    font-size: calc(2vw + 4rem);
+    line-height: 0;
+    color: var(--txt-color);
+}
+
 .content__copy--images {
     display: flex;
     gap: 2rem;
@@ -156,9 +184,11 @@ body {
 
 .content__over--open {
     position: relative;
+    display: inline-block;
+    border-bottom: solid 2px var(--txt-color);
 }
 
-.content__over--open::after {
+/* .content__over--open::after {
     content: "";
     width: 100%;
     height: 2px;
@@ -166,7 +196,7 @@ body {
     position: absolute;
     left: 0%;
     bottom: 8px;
-}
+} */
 
 .footer {
     font-family: "Oswald", sans-serif;

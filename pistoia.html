@@ -21,7 +21,7 @@
         <ul class="nav__wrapper">
             <li>Pistoia</li>
             <li class="nav__link" id="info--btn">Info</li>
-            <li class="nav__link"><a href="index.html">Back</a></li>
+            <li class="nav__link"><a href="index.html">Home</a></li>
         </ul>
     </nav>
     <nav class="nav--pages">
@@ -204,9 +204,9 @@
             });
         });
 
-        openOnClick("info--btn", "info--block", "slide-in");
-        openOnClick("manicula-e--btn", "manicula-e--block", "slide-in");
-        openOnClick("manicula-c--btn", "manicula-c--block", "slide-in");
+        openOnClick("info--btn", "info--block", "slide-in", ".content__info");
+        openOnClick("manicula-e--btn", "manicula-e--block", "slide-in", ".content__info");
+        openOnClick("manicula-c--btn", "manicula-c--block", "slide-in", ".content__info");
 
         closeOnClick("info--close", "info--block", "slide-in");
         closeOnClick("manicula-e--close", "manicula-e--block", "slide-in");
@@ -214,19 +214,26 @@
 
         closeAll(".nav, .nav--pages", ".content__info", "slide-in");
 
-        function openOnClick(trigger, section, className) {
+        function openOnClick(trigger, section, className, allSections) {
             document.getElementById(trigger).addEventListener("click", (event) => {
-                document.getElementById(section).classList.toggle(className);
+                const allInfos = document.querySelectorAll(allSections);
+                allInfos.forEach(info => {
+                    if (info.classList.contains(className)) {
+                        info.classList.remove(className);
+                        event.stopPropagation();
+                    }
+                });
+                document.getElementById(section).classList.add(className);
                 event.stopPropagation();
-            })
-        }
+            });
+        };
 
         function closeOnClick(trigger, section, className) {
             document.getElementById(trigger).addEventListener("click", (event) => {
                 document.getElementById(section).classList.remove(className);
                 event.stopPropagation();
-            })
-        }
+            });
+        };
 
         function closeAll(trigger, sections, className) {
             const navTags = document.querySelectorAll(trigger);
@@ -240,8 +247,8 @@
                         }
                     });
                 });
-            })
-        }
+            });
+        };
     </script>
 </body>
 

@@ -12,6 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400;1,500&family=Oswald:wght@300;400&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -68,8 +69,17 @@
         </div>
     </footer>
     <script>
-        const object = document.querySelector(".content__over--open");
         const overlay = document.querySelector(".content__over");
+        const object = document.querySelector(".content__over--open");
+        // const objectString = document.querySelector(".content__over--open").innerHTML;
+        // console.log(objectString)
+        // const chars = objectString.split('');
+        // console.log(chars);
+        // chars.forEach(ch => {
+        //     document.addEventListener("onload", () => {
+        //         ch.style.textDecoration = "underline"
+        //     })
+        // });
         object.addEventListener("mouseenter", () => {
             overlay.style.opacity = "1"
         })

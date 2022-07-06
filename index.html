@@ -10,9 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400;1,500&family=Oswald:wght@300;400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;1,200;1,300;1,400;1,500&family=Oswald:wght@300;400;600&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital@1&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -22,53 +22,84 @@
         <img src="assets/uploads/manicula-enrico.svg">
         <img src="assets/uploads/manicula-chiara.svg">
     </div>
-    <nav class="nav">
-        <ul class="nav__wrapper">
-            <li class="nav__link"><a href="pistoia.html">Pistoia</a></li>
-        </ul>
-    </nav>
-    <main class="content">
-        <div class="content__over">
-            <img src="assets/uploads/manicula-enrico-framed.svg">
-            <img src="assets/uploads/manicula-chiara-framed.svg">
-        </div>
-        <section class="content__copy">
-            <div class="content__copy--main">
-                <p>Manicula is a project by Enrico Malatesta and Chiara Pavolucci. It consists of a collection of
-                    listening exercises/scores and is aimed at investigating the acoustic phenomena present in some
-                    parts of the city; the areas of activation of the practices are not declared, but indicated by a
-                    <span class="content__over--open">reference symbol</span> *. The project is a sort of treasure hunt
-                    and does not require the presence and mediation of a performer/artist/guide and there is no personal
-                    interaction; each individual decides how to undertake the search for spaces and how to use the
-                    available scores to investigate the relationship between sound and space through the use of their
-                    body, voice or simple tools.
-                </p>
-
-                <p>Manicula is an open project that includes, in addition to the annotations and exercises developed on
-                    site by the author, a series of contributions by external artists and researchers who investigate
-                    the practices of active listening, the relationship between sound, body and the city, with the
-                    intent of offering multiple starting points to the participants; no specific knowledge or skills are
-                    required to engage in the proposed listening practices; scores and readers encourage individual
-                    initiative towards observation and the intuitive acquisition of the potential of sound.</p>
+    <main class="container container--home">
+        <nav class="nav nav--home">
+            <p id="btn-open--nav" class="nav-link">Cities</p>
+            <div class="nav-block">
+                <ul class="content--hidden nav-list">
+                    <li><a href="pistoia.html">Pistoia</a></li>
+                    <li><a href="pistoia.html">Pasadena</a></li>
+                    <li><a href="pistoia.html">Vancouver</a></li>
+                    <li><a href="pistoia.html">Twin Peaks</a></li>
+                    <li><a href="pistoia.html">Eureka</a></li>
+                </ul>
+                <div class="content--hidden nav-footer">
+                    <p>© 2022</p>
+                </div>
             </div>
+            <h1 id="site-title" class="nav-link">Manicula</h1>
+            <div id="btn-close--nav" class="btn-close">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 1L1 9" stroke="var(--bg-color)" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M9 9L1 1" stroke="var(--bg-color)" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+        </nav>
 
-            <div class="content__copy--small">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Nibh cras pulvinar mattis nunc sed blandit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Nibh cras pulvinar mattis nunc sed blandit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Nibh cras pulvinar mattis nunc sed blandit.</p>
+        <section class="main-content">
+            <div class="content-wrapper--home">
+                <div class="copy-indent--main copytxt--large">
+                    <p>Manicula is an artistic research format aimed at combining
+                        practices involving image and sound in
+                        relation with the theme of the <span>city</span>, <span>landscape</span> and
+                        <span>walking</span>,
+                        with a <span>nomadic attitude</span> that connects in a common network
+                        different <span>urban spaces</span> and <span>territories</span>.
+                    </p>
+                    <p>Manicula consists of a collection of active listening and observation exercises aimed at
+                        investigating the acoustic and visual phenomena present in some parts of the city; the areas of
+                        activation of the practices are not declared, but indicated by <em
+                            class="content-over--open">reference symbol</em>. The project is a kind of <span>treasure
+                            hunt</span> and
+                        does not require the presence and mediation of a performer/artist/guide and there is no personal
+                        interaction; each individual decides how to undertake the search for symbols and how to use the
+                        available scores to investigate, on the one hand, the relationship between <span>sound and
+                            space</span> through the use of the body, voice or with simple tools and, on the other hand,
+                        the observation of <span>visual phenomena</span> related to the movement of light and its
+                        interaction with surfaces/layouts of the city.
+                        Manicula also invites people to continue the exploration by enriching it with their own personal
+                        research. No specific knowledge or skills are required to try the proposed practices.
+                    </p>
 
+                    <p>Manicula is an <span>open project</span> that also includes a visual and textual <em>journal</em>
+                        that documents the research and the walking paths carried out in situ by the authors.</p>
+                </div>
+
+                <div class="copy-indent--lower copytxt--medium">
+                    <p><em><a href="https://enricomalatesta.com/" target="_blank">Enrico Malatesta</a></em> is an
+                        Italian percussionist and sound researcher active in the field of experimental
+                        music, sound intervention and performance; his practice explores the relations between sound,
+                        space and body, the vitality of materials and the morphology of surfaces, with particular
+                        attention to the percussive acts and the modes of listenings.</p>
+                    <p><em><a href="https://www.instagram.com/p/2idpcrRfDI/" target="_blank">Chiara Pavolucci</a></em>
+                        is an Italian photographer. Her visual research revolves on an intimistic language
+                        and the study of landscape at the intersection between natural and urban environment, combining
+                        analog and digital techniques in the search for a personal imagery capable of enhancing the
+                        process
+                        itself.</p>
+                </div>
+                <div class="copy-indent--main copytxt--large">
+                    <em><a href="mailto:info@manicula.it">info@manicula.it</a></em>
+                </div>
             </div>
         </section>
     </main>
-    <footer class="footer">
-        <div class="colophon">
-            <p>© 2022</p>
-        </div>
-    </footer>
-    <script>
+    <div class="content-over">
+        <img src="assets/uploads/manicula-enrico-framed.svg">
+        <img src="assets/uploads/manicula-chiara-framed.svg">
+    </div>
+    <script src="script.js"></script>
+    <!-- <script>
         const overlay = document.querySelector(".content__over");
         const object = document.querySelector(".content__over--open");
         // const objectString = document.querySelector(".content__over--open").innerHTML;
@@ -77,7 +108,7 @@
         // console.log(chars);
         // chars.forEach(ch => {
         //     document.addEventListener("onload", () => {
-        //         ch.style.textDecoration = "underline"
+        //         ch.style.color = "black"
         //     })
         // });
         object.addEventListener("mouseenter", () => {
@@ -86,7 +117,33 @@
         object.addEventListener("mouseleave", () => {
             overlay.style.opacity = "0"
         })
-    </script>
+
+        const openBtn = document.getElementById("btn-open--nav");
+        const closeBtn = document.getElementById("btn-close--nav");
+        const wrapper = document.querySelector(".body__wrapper");
+        const navLabels = document.querySelectorAll(".nav-link");
+        const navBlocks = document.querySelectorAll(".content--hidden")
+        openBtn.addEventListener("click", () => {
+            wrapper.classList.toggle("slide");
+            navLabels.forEach(label => {
+                label.classList.toggle("rotate");
+            });
+            setTimeout(() => {
+                navBlocks.forEach(block => {
+                    block.style.opacity = "1";
+                });
+            }, 800);
+        });
+        closeBtn.addEventListener("click", () => {
+            wrapper.classList.remove("slide");
+            navLabels.forEach(label => {
+                label.classList.add("rotate");
+            });
+            navBlocks.forEach(block => {
+                block.style.opacity = "0";
+            });
+        });
+    </script> -->
 </body>
 
 </html>

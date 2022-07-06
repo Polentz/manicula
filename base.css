@@ -167,7 +167,7 @@ em {
     font-style: italic;
 }
 
-/* p::-moz-selection,
+p::-moz-selection,
 h1::-moz-selection,
 h2::-moz-selection,
 h3::-moz-selection,
@@ -180,20 +180,16 @@ div::-moz-selection,
 br::-moz-selection,
 em::-moz-selection,
 u::-moz-selection,
-strong::-moz-selection {
-    color: var(--bg-color);
-    background: var(--txt-color);
-}
-
+strong::-moz-selection,
 span::-moz-selection,
-img::-moz-selection {
-    color: var(--txt-color);
+mark::-moz-selection {
+    color: #ffc547;
     background: transparent;
 }
 
-mark::-moz-selection {
+img::-moz-selection {
     color: var(--txt-color);
-    background: var(--bg-color);
+    background: transparent;
 }
 
 p::selection,
@@ -209,22 +205,19 @@ div::selection,
 br::selection,
 em::selection,
 u::selection,
-strong::selection {
-    color: var(--bg-color);
-    background: var(--txt-color);
+strong::selection,
+span::selection,
+mark::selection {
+    color: #ffc547;
+    background: transparent;
 }
 
-span::selection,
 img::selection {
     color: var(--txt-color);
     background: transparent;
 }
 
-mark::selection {
-    color: var(--txt-color);
-    background: var(--bg-color);
-}
-
+/* 
 ::-webkit-scrollbar {
     width: 4px;
 }

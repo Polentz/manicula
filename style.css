@@ -223,7 +223,7 @@ em:hover::after {
 }
 
 .nav--home .content--block {
-    height: var(--doc-height);
+    height: 100%;
 }
 
 .content--hidden {
@@ -439,6 +439,13 @@ em:hover::after {
 }
 
 @media screen and (max-width: 720px) {
+    .load {
+        flex-direction: column;
+    }
+
+    .load img {
+        width: 65vw;
+    }
 
     .content-wrapper--home {
         padding: 24px;
@@ -492,6 +499,10 @@ em:hover::after {
     #info--images {
         transform: translateX(100vw);
         border-left: none;
+    }
+
+    .content--symbol img {
+        width: 100%;
     }
 
     .btn-wrapper {

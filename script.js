@@ -24,17 +24,7 @@ openBtnNav.forEach(btn => {
         }, 800);
     });
 });
-// openBtnNav.addEventListener("click", () => {
-//     container.classList.add("move");
-//     navLabels.forEach(label => {
-//         label.classList.add("rotate");
-//     });
-//     setTimeout(() => {
-//         navBlocks.forEach(block => {
-//             block.style.opacity = "1";
-//         });
-//     }, 800);
-// });
+
 closeBtnNav.addEventListener("click", () => {
     navBlocks.forEach(block => {
         block.style.opacity = "0";
@@ -57,17 +47,6 @@ if (object) {
         overlay.style.opacity = "0"
     });
 };
-
-// const objectString = document.querySelector(".content-over--open").innerHTML;
-// console.log(objectString);
-// const chars = objectString.split('');
-// console.log(chars);
-// const letters = chars.toString('');
-// console.log(letters);
-
-// const btnClose = document.getElementById("close");
-// const content = document.querySelector(".content__main");
-// const nav = document.querySelectorAll(".nav--pages, .nav");
 
 const OpenBtnBookmark = document.getElementById("btn-info--bookmark");
 const OpenBtnImages = document.getElementById("btn-info--images");

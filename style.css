@@ -15,10 +15,6 @@
     --bg-color: #1e1e1e;
     --txt-color: #f6f1e6;
     --acc-color: #e4c37b;
-    /* e4c37b */
-    /* ffc547 */
-    /* f6f1e6 */
-    /* e9d6ad */
     --white: #fff;
     --black: #000;
     --nav-width: 32px;
@@ -39,7 +35,6 @@
 }
 
 body {
-    /* height: auto; */
     overflow-x: hidden;
     background-color: var(--bg-color);
 }
@@ -138,18 +133,13 @@ em:hover::after {
 }
 
 .nav-link,
-.nav-list {
+.nav-list,
+.nav-footer {
     font-family: "Oswald", sans-serif;
     font-size: var(--txt-nav);
     font-weight: 400;
     text-transform: uppercase;
     text-align: end;
-}
-
-.nav-footer {
-    font-family: "Fira Sans", sans-serif;
-    font-size: var(--txt-nav);
-    font-weight: 400;
 }
 
 .nav--home {
@@ -198,7 +188,7 @@ em:hover::after {
 }
 
 #site-title {
-    bottom: 120px;
+    bottom: 128px;
     opacity: 1;
 }
 
@@ -250,13 +240,8 @@ em:hover::after {
     font-family: "Lack Line Regular", sans-serif;
     line-height: 1.2;
     text-transform: uppercase;
-    /* padding: 0 16px; */
     transition: all .5s ease;
 }
-
-/* .main-content span:hover {
-    padding: 0 8px;
-} */
 
 .content-wrapper--page {
     height: var(--doc-height);

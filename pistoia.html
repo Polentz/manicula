@@ -51,7 +51,7 @@
                     <img src="assets/uploads/placeholder.svg">
                     <img src="assets/uploads/placeholder.svg">
                 </div>
-                <div class="content--hidden nav-footer copytxt--small">
+                <div class="content--hidden nav-footer">
                     <p>© 2022 Enrico Malatesta & Chiara Pavolucci</p>
                 </div>
             </div>
@@ -187,114 +187,6 @@
         </div>
     </div>
     <script src="script.js"></script>
-    <!-- <script>
-        const object = document.querySelector(".content__main--bookmark");
-        const overlay = document.querySelectorAll(".nav--pages");
-        const btnEnlarge = document.getElementById("enlarge");
-        const btnClose = document.getElementById("close");
-        const content = document.querySelector(".content__main");
-        const nav = document.querySelectorAll(".nav--pages, .nav");
-        const btnNext = document.getElementById("next");
-        const scrollContainer = document.querySelector(".table__wrapper");
-
-        object.addEventListener("mouseenter", () => {
-            if (content.classList.contains("enlarge")) {
-                return false
-            } else {
-                overlay.forEach(element => {
-                    element.classList.add("behind");
-                });
-            }
-        })
-
-        object.addEventListener("mouseleave", () => {
-            overlay.forEach(element => {
-                element.classList.remove("behind");
-            });
-        });
-
-        btnEnlarge.addEventListener("click", () => {
-            nav.forEach(n => {
-                n.style.opacity = "0";
-                n.style.pointerEvents = "none";
-            });
-            btnEnlarge.classList.add("hide");
-            setTimeout(() => {
-                content.classList.add("enlarge");
-                btnClose.classList.add("visible");
-                scrollContainer.scrollLeft = 0;
-            }, 300);
-        })
-
-        btnClose.addEventListener("click", () => {
-            content.classList.remove("enlarge");
-            btnClose.classList.remove("visible");
-            setTimeout(() => {
-                nav.forEach(n => {
-                    n.style.opacity = "1";
-                    n.style.pointerEvents = "all";
-                });
-                btnEnlarge.classList.remove("hide");
-                scrollContainer.scrollLeft = 0;
-            }, 300);
-        });
-
-
-        btnNext.addEventListener("click", () => {
-            let responsiveDistance = content.innerWidth || content.clientWidth;
-            console.log(responsiveDistance);
-            scrollContainer.scrollBy({
-                left: responsiveDistance,
-                behavior: "instant"
-            });
-        });
-
-        openOnClick("info--btn", "info--block", "slide-in", ".content__info");
-        openOnClick("manicula-e--btn", "manicula-e--block", "slide-in", ".content__info");
-        openOnClick("manicula-c--btn", "manicula-c--block", "slide-in", ".content__info");
-
-        closeOnClick("info--close", "info--block", "slide-in");
-        closeOnClick("manicula-e--close", "manicula-e--block", "slide-in");
-        closeOnClick("manicula-c--close", "manicula-c--block", "slide-in");
-
-        closeAll(".nav, .nav--pages", ".content__info", "slide-in");
-
-        function openOnClick(trigger, section, className, allSections) {
-            document.getElementById(trigger).addEventListener("click", (event) => {
-                const allInfos = document.querySelectorAll(allSections);
-                allInfos.forEach(info => {
-                    if (info.classList.contains(className)) {
-                        info.classList.remove(className);
-                        event.stopPropagation();
-                    }
-                });
-                document.getElementById(section).classList.add(className);
-                event.stopPropagation();
-            });
-        };
-
-        function closeOnClick(trigger, section, className) {
-            document.getElementById(trigger).addEventListener("click", (event) => {
-                document.getElementById(section).classList.remove(className);
-                event.stopPropagation();
-            });
-        };
-
-        function closeAll(trigger, sections, className) {
-            const navTags = document.querySelectorAll(trigger);
-            navTags.forEach(navTag => {
-                navTag.addEventListener("click", (event) => {
-                    const allInfos = document.querySelectorAll(sections);
-                    allInfos.forEach(info => {
-                        if (info.classList.contains(className)) {
-                            info.classList.remove(className);
-                            event.stopPropagation();
-                        }
-                    });
-                });
-            });
-        };
-    </script> -->
 </body>
 
 </html>

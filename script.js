@@ -1,20 +1,33 @@
-const openBtnNav = document.getElementById("btn-open--nav");
+const openBtnNav = document.querySelectorAll("#btn-open--nav, #cms-btn-placeholder");
 const closeBtnNav = document.getElementById("btn-close--nav");
 const container = document.querySelector(".container");
 const navLabels = document.querySelectorAll(".nav-link");
 const navBlocks = document.querySelectorAll(".content--hidden");
 
-openBtnNav.addEventListener("click", () => {
-    container.classList.add("move");
-    navLabels.forEach(label => {
-        label.classList.add("rotate");
-    });
-    setTimeout(() => {
-        navBlocks.forEach(block => {
-            block.style.opacity = "1";
+openBtnNav.forEach(btn => {
+    btn.addEventListener("click", () => {
+        container.classList.add("move");
+        navLabels.forEach(label => {
+            label.classList.add("rotate");
         });
-    }, 800);
+        setTimeout(() => {
+            navBlocks.forEach(block => {
+                block.style.opacity = "1";
+            });
+        }, 800);
+    });
 });
+// openBtnNav.addEventListener("click", () => {
+//     container.classList.add("move");
+//     navLabels.forEach(label => {
+//         label.classList.add("rotate");
+//     });
+//     setTimeout(() => {
+//         navBlocks.forEach(block => {
+//             block.style.opacity = "1";
+//         });
+//     }, 800);
+// });
 closeBtnNav.addEventListener("click", () => {
     navBlocks.forEach(block => {
         block.style.opacity = "0";

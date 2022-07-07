@@ -25,6 +25,9 @@
     <main class="container container--home">
         <nav class="nav nav--home">
             <p id="btn-open--nav" class="nav-link">Cities</p>
+            <div id="cms-btn-placeholder">
+                <!-- not empty -->
+            </div>
             <div class="nav-block">
                 <ul class="content--hidden nav-list">
                     <li><a href="pistoia.html">Pistoia</a></li>
@@ -99,51 +102,6 @@
         <img src="assets/uploads/manicula-chiara-framed.svg">
     </div>
     <script src="script.js"></script>
-    <!-- <script>
-        const overlay = document.querySelector(".content__over");
-        const object = document.querySelector(".content__over--open");
-        // const objectString = document.querySelector(".content__over--open").innerHTML;
-        // console.log(objectString)
-        // const chars = objectString.split('');
-        // console.log(chars);
-        // chars.forEach(ch => {
-        //     document.addEventListener("onload", () => {
-        //         ch.style.color = "black"
-        //     })
-        // });
-        object.addEventListener("mouseenter", () => {
-            overlay.style.opacity = "1"
-        })
-        object.addEventListener("mouseleave", () => {
-            overlay.style.opacity = "0"
-        })
-
-        const openBtn = document.getElementById("btn-open--nav");
-        const closeBtn = document.getElementById("btn-close--nav");
-        const wrapper = document.querySelector(".body__wrapper");
-        const navLabels = document.querySelectorAll(".nav-link");
-        const navBlocks = document.querySelectorAll(".content--hidden")
-        openBtn.addEventListener("click", () => {
-            wrapper.classList.toggle("slide");
-            navLabels.forEach(label => {
-                label.classList.toggle("rotate");
-            });
-            setTimeout(() => {
-                navBlocks.forEach(block => {
-                    block.style.opacity = "1";
-                });
-            }, 800);
-        });
-        closeBtn.addEventListener("click", () => {
-            wrapper.classList.remove("slide");
-            navLabels.forEach(label => {
-                label.classList.add("rotate");
-            });
-            navBlocks.forEach(block => {
-                block.style.opacity = "0";
-            });
-        });
-    </script> -->
 </body>
 
 </html>

@@ -183,12 +183,11 @@ u::-moz-selection,
 strong::-moz-selection,
 span::-moz-selection,
 mark::-moz-selection {
-    color: #ffc547;
+    color: var(--acc-color);
     background: transparent;
 }
 
 img::-moz-selection {
-    color: var(--txt-color);
     background: transparent;
 }
 
@@ -208,18 +207,17 @@ u::selection,
 strong::selection,
 span::selection,
 mark::selection {
-    color: #ffc547;
+    color: var(--acc-color);
     background: transparent;
 }
 
 img::selection {
-    color: var(--txt-color);
     background: transparent;
 }
 
-/* 
-::-webkit-scrollbar {
-    width: 4px;
+
+/* ::-webkit-scrollbar {
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -227,5 +225,5 @@ img::selection {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--extra-color);
+    background: var(--black);
 } */

@@ -137,13 +137,18 @@ em:hover::after {
 }
 
 .nav-link,
-.nav-list,
-.nav-footer {
+.nav-list {
     font-family: "Oswald", sans-serif;
     font-size: var(--txt-nav);
     font-weight: 400;
     text-transform: uppercase;
     text-align: end;
+}
+
+.nav-footer {
+    font-family: "Fira Sans", sans-serif;
+    font-size: var(--txt-nav);
+    font-weight: 400;
 }
 
 .nav--home {
@@ -236,7 +241,7 @@ em:hover::after {
 }
 
 .main-content {
-    width: calc(100vw - var(--nav-width) - 10px);
+    width: calc(100vw - var(--nav-width));
     position: relative;
 }
 
@@ -321,6 +326,7 @@ em:hover::after {
     padding: 1rem;
     background-color: var(--txt-color);
     border-right: 1px solid var(--bg-color);
+    box-shadow: 0 0 15px 5px var(--acc-color);
     z-index: 2;
 }
 

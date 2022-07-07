@@ -11,6 +11,7 @@
 }
 
 :root {
+    --doc-height: 100%;
     --bg-color: #1e1e1e;
     --txt-color: #f6f1e6;
     --acc-color: #e4c37b;
@@ -38,7 +39,7 @@
 }
 
 body {
-    height: auto;
+    /* height: auto; */
     overflow-x: hidden;
     background-color: var(--bg-color);
 }
@@ -66,7 +67,7 @@ em:hover::after {
 
 .load {
     width: 100%;
-    height: 100vh;
+    height: var(--doc-height);
     background-color: var(--bg-color);
     display: flex;
     justify-content: center;
@@ -164,7 +165,7 @@ em:hover::after {
 }
 
 .nav {
-    height: 100vh;
+    height: var(--doc-height);
     padding: 80px 32px;
     overflow-y: scroll;
     display: flex;
@@ -224,15 +225,15 @@ em:hover::after {
     cursor: pointer;
 }
 
-.nav-block {
+.content--block {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-top: 80px;
 }
 
-.nav--home .nav-block {
-    height: 100%;
+.nav--home .content--block {
+    height: var(--doc-height);
 }
 
 .content--hidden {
@@ -258,7 +259,7 @@ em:hover::after {
 } */
 
 .content-wrapper--page {
-    height: 100vh;
+    height: var(--doc-height);
     overflow: hidden;
     position: relative;
     display: flex;
@@ -294,7 +295,7 @@ em:hover::after {
 
 .content-over {
     width: 100vw;
-    height: 100vh;
+    height: var(--doc-height);
     display: flex;
     justify-content: center;
     gap: 5vw;
@@ -319,7 +320,7 @@ em:hover::after {
 
 .content--bookmark {
     width: 20%;
-    height: 100%;
+    height: var(--doc-height);
     position: relative;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -352,7 +353,7 @@ em:hover::after {
 
 .content--images {
     width: 80%;
-    height: 100%;
+    height: var(--doc-height);
     position: relative;
     background-color: var(--white);
     display: flex;
@@ -411,7 +412,7 @@ em:hover::after {
 
 .content--info {
     width: 50vw;
-    height: 100vh;
+    height: var(--doc-height);
     overflow-y: scroll;
     position: absolute;
     top: 0;
@@ -484,12 +485,14 @@ em:hover::after {
     }
 
     #btn-info--bookmark {
-        left: calc(100% - 32px);
+        left: auto;
+        right: 16px;
     }
 
     #btn-info--images {
-        top: 50%;
-        right: 0;
+        top: auto;
+        bottom: 80px;
+        right: 8px;
     }
 
     .content--info {
@@ -507,7 +510,19 @@ em:hover::after {
     }
 
     .btn-wrapper {
-        right: 1rem;
+        top: 1rem;
+        right: 50%;
+        transform: translateX(4rem);
         gap: 4rem;
+        height: fit-content;
+    }
+
+    #btn-prev--images svg,
+    #btn-next--images svg,
+    #btn-close--nav svg,
+    #btn-close--bookmark svg,
+    #btn-close--images svg {
+        width: 12px;
+        height: 12px;
     }
 }

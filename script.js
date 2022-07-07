@@ -1,3 +1,10 @@
+const documentHeight = () => {
+    const doc = document.documentElement
+    doc.style.setProperty("--doc-height", `${window.innerHeight}px`)
+}
+window.addEventListener("resize", documentHeight)
+documentHeight()
+
 const openBtnNav = document.querySelectorAll("#btn-open--nav, #cms-btn-placeholder");
 const closeBtnNav = document.getElementById("btn-close--nav");
 const container = document.querySelector(".container");

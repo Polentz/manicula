@@ -217,6 +217,7 @@ em:hover::after {
     position: sticky;
     top: 0;
     z-index: 2;
+    scrollbar-width: none;
 }
 
 .nav::-webkit-scrollbar {
@@ -398,6 +399,7 @@ em:hover::after {
     -webkit-box-shadow: 0 0 15px 5px var(--acc-color);
     box-shadow: 0 0 15px 5px var(--acc-color);
     z-index: 2;
+    scrollbar-width: none;
 }
 
 .content--bookmark::-webkit-scrollbar {
@@ -441,6 +443,7 @@ em:hover::after {
     display: -ms-flexbox;
     display: flex;
     margin-left: -4px;
+    scrollbar-width: none;
 }
 
 .images-wrapper::-webkit-scrollbar {
@@ -448,7 +451,7 @@ em:hover::after {
 }
 
 .images-wrapper img {
-    width: 100%;
+    max-width: 100%;
 }
 
 .btn-wrapper {
@@ -500,6 +503,7 @@ em:hover::after {
     -webkit-transition: all .5s ease-in;
     -o-transition: all .5s ease-in;
     transition: all .5s ease-in;
+    scrollbar-width: none;
 }
 
 #info--bookmark.slide,

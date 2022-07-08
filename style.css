@@ -396,8 +396,8 @@ em:hover::after {
     padding: 1rem;
     background-color: var(--txt-color);
     border-right: 1px solid var(--bg-color);
-    -webkit-box-shadow: 0 0 35px 5px var(--acc-color);
-    box-shadow: 0 0 35px 5px var(--acc-color);
+    -webkit-box-shadow: -4px 0 35px 5px var(--bg-color);
+    box-shadow: -4px 0 35px 5px var(--bg-color);
     z-index: 2;
     scrollbar-width: none;
 }

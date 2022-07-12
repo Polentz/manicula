@@ -9,6 +9,7 @@ const openBtnNav = document.querySelectorAll("#btn-open--nav, #cms-btn-placehold
 const closeBtnNav = document.getElementById("btn-close--nav");
 const container = document.querySelector(".container");
 const navLabels = document.querySelectorAll(".nav-link");
+const navContent = document.querySelector(".nav-content")
 const navBlocks = document.querySelectorAll(".content--hidden");
 
 openBtnNav.forEach(btn => {
@@ -17,6 +18,7 @@ openBtnNav.forEach(btn => {
         navLabels.forEach(label => {
             label.classList.add("rotate");
         });
+        navContent.style.display = "flex";
         setTimeout(() => {
             navBlocks.forEach(block => {
                 block.style.opacity = "1";
@@ -35,6 +37,9 @@ closeBtnNav.addEventListener("click", () => {
             label.classList.remove("rotate");
         });
     }, 200);
+    setTimeout(() => {
+        navContent.style.display = "none";
+    }, 800);
 });
 
 const overlay = document.querySelector(".content-over");
@@ -58,24 +63,36 @@ const CloseBtnImage = document.getElementById("btn-close--images");
 const btnNext = document.getElementById("btn-next--images");
 const btnPrev = document.getElementById("btn-prev--images");
 const scrollContainer = document.querySelector(".images-wrapper");
+const firstImage = document.querySelector(".images-wrapper img:first-child");
 
-btnNext.addEventListener("click", () => {
-    let responsiveDistance = scrollContainer.innerWidth || scrollContainer.clientWidth;
-    console.log(responsiveDistance);
-    scrollContainer.scrollBy({
-        left: responsiveDistance,
-        behavior: "instant"
-    });
+window.addEventListener("resize", () => {
+    scrollContainer.scrollTo(0, 0);
+})
+scrollContainer.addEventListener("wheel", (event) => {
+    event.preventDefault();
+    scrollContainer.scrollLeft += event.deltaY;
 });
+// scrollContainer.addEventListener("scroll", (event) => {
+//     event.preventDefault();
+// });
 
-btnPrev.addEventListener("click", () => {
-    let responsiveDistance = scrollContainer.innerWidth || scrollContainer.clientWidth;
-    console.log(responsiveDistance);
-    scrollContainer.scrollBy({
-        left: - responsiveDistance,
-        behavior: "instant"
-    });
-});
+// btnNext.addEventListener("click", () => {
+//     const responsiveDistance = firstImage.clientWidth;
+//     console.log(responsiveDistance);
+//     scrollContainer.scrollBy({
+//         left: responsiveDistance,
+//         behavior: "smooth"
+//     });
+// });
+
+// btnPrev.addEventListener("click", () => {
+//     let responsiveDistance = scrollContainer.innerWidth || scrollContainer.clientWidth;
+//     console.log(responsiveDistance);
+//     scrollContainer.scrollBy({
+//         left: - responsiveDistance,
+//         behavior: "smooth"
+//     });
+// });
 
 OpenBtnBookmark.addEventListener("click", () => {
     infoBookmark.classList.add("slide");

@@ -53,17 +53,17 @@ if (object) {
     });
 };
 
-const OpenBtnBookmark = document.getElementById("btn-info--bookmark");
-const OpenBtnImages = document.getElementById("btn-info--images");
+const openBtnBookmark = document.getElementById("btn-info--bookmark");
+const openBtnImages = document.getElementById("btn-info--images");
 const infoBookmark = document.getElementById("info--bookmark");
 const infoImages = document.getElementById("info--images");
-const CloseBtnBookmark = document.getElementById("btn-close--bookmark");
-const CloseBtnImage = document.getElementById("btn-close--images");
+const closeBtnBookmark = document.getElementById("btn-close--bookmark");
+const closeBtnImage = document.getElementById("btn-close--images");
 
-const btnNext = document.getElementById("btn-next--images");
-const btnPrev = document.getElementById("btn-prev--images");
 const scrollContainer = document.querySelector(".images-wrapper");
-const firstImage = document.querySelector(".images-wrapper img:first-child");
+// const btnNext = document.getElementById("btn-next--images");
+// const btnPrev = document.getElementById("btn-prev--images");
+// const firstImage = document.querySelector(".images-wrapper img:first-child");
 
 window.addEventListener("resize", () => {
     scrollContainer.scrollTo(0, 0);
@@ -94,19 +94,19 @@ scrollContainer.addEventListener("wheel", (event) => {
 //     });
 // });
 
-OpenBtnBookmark.addEventListener("click", () => {
+openBtnBookmark.addEventListener("click", () => {
     infoBookmark.classList.add("slide");
 });
 
-CloseBtnBookmark.addEventListener("click", () => {
+closeBtnBookmark.addEventListener("click", () => {
     infoBookmark.classList.remove("slide");
 });
 
-OpenBtnImages.addEventListener("click", () => {
+openBtnImages.addEventListener("click", () => {
     infoImages.classList.add("slide");
 });
 
-CloseBtnImage.addEventListener("click", () => {
+closeBtnImage.addEventListener("click", () => {
     infoImages.classList.remove("slide");
 });
 

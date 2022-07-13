@@ -4,19 +4,11 @@
         url("assets/fonts/lack-line-regular-webfont.woff") format("woff");
 }
 
-@font-face {
-    font-family: "Lack Line Italic";
-    src: url("assets/fonts/lack-line-italic-webfont.woff2") format("woff2"),
-        url("assets/fonts/lack-line-italic-webfont.woff") format("woff");
-}
-
 :root {
     --doc-height: 100%;
     --bg-color: #1e1e1e;
     --txt-color: #f6f1e6;
     --acc-color: #ffb500;
-    /* #ffb500 */
-    /* #e4c37b */
     --white: #fff;
     --black: #000;
     --nav-width: 32px;
@@ -346,10 +338,6 @@ em:hover::after {
     padding-left: 16vw;
 }
 
-.copy-indent--lower p {
-    padding-left: 16vw;
-}
-
 .content--sponsor {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -483,26 +471,6 @@ em:hover::after {
 .images-wrapper img {
     max-width: 100%;
 }
-
-/* .btn-wrapper {
-    position: absolute;
-    bottom: 40px;
-    right: 40px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    gap: 1rem;
-    z-index: 2;
-    mix-blend-mode: difference;
-}
-
-#btn-next--images {
-    cursor: pointer;
-}
-
-#btn-prev--images {
-    cursor: pointer;
-} */
 
 .btn-info {
     position: absolute;

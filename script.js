@@ -61,9 +61,6 @@ const closeBtnBookmark = document.getElementById("btn-close--bookmark");
 const closeBtnImage = document.getElementById("btn-close--images");
 
 const scrollContainer = document.querySelector(".images-wrapper");
-// const btnNext = document.getElementById("btn-next--images");
-// const btnPrev = document.getElementById("btn-prev--images");
-// const firstImage = document.querySelector(".images-wrapper img:first-child");
 
 window.addEventListener("resize", () => {
     scrollContainer.scrollTo(0, 0);
@@ -72,27 +69,6 @@ scrollContainer.addEventListener("wheel", (event) => {
     event.preventDefault();
     scrollContainer.scrollLeft += event.deltaY;
 });
-// scrollContainer.addEventListener("scroll", (event) => {
-//     event.preventDefault();
-// });
-
-// btnNext.addEventListener("click", () => {
-//     const responsiveDistance = firstImage.clientWidth;
-//     console.log(responsiveDistance);
-//     scrollContainer.scrollBy({
-//         left: responsiveDistance,
-//         behavior: "smooth"
-//     });
-// });
-
-// btnPrev.addEventListener("click", () => {
-//     let responsiveDistance = scrollContainer.innerWidth || scrollContainer.clientWidth;
-//     console.log(responsiveDistance);
-//     scrollContainer.scrollBy({
-//         left: - responsiveDistance,
-//         behavior: "smooth"
-//     });
-// });
 
 openBtnBookmark.addEventListener("click", () => {
     infoBookmark.classList.add("slide");

@@ -43,11 +43,12 @@ body {
     background-color: var(--bg-color);
 }
 
-em {
+.main-content a {
     position: relative;
+    font-style: italic;
 }
 
-em::after {
+.main-content a::after {
     content: "";
     width: 100%;
     height: 1px;
@@ -66,7 +67,7 @@ em::after {
     transition: all .2s ease-in-out;
 }
 
-em:hover::after {
+.main-content a:hover::after {
     -webkit-transform: scaleX(0);
     -ms-transform: scaleX(0);
     transform: scaleX(0);
@@ -306,10 +307,12 @@ em:hover::after {
     position: relative;
 }
 
-.main-content span {
+.main-content mark {
     font-family: "Lack Line Regular", sans-serif;
     line-height: 1.2;
     text-transform: uppercase;
+    background-color: transparent;
+    color: var(--txt-color);
     -webkit-transition: all .5s ease;
     -o-transition: all .5s ease;
     transition: all .5s ease;

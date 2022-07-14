@@ -3,7 +3,7 @@ const documentHeight = () => {
     doc.style.setProperty("--doc-height", `${window.innerHeight}px`)
 }
 window.addEventListener("resize", documentHeight)
-documentHeight()
+documentHeight();
 
 const openBtnNav = document.querySelectorAll("#btn-open--nav, #cms-btn-placeholder");
 const closeBtnNav = document.getElementById("btn-close--nav");
@@ -44,6 +44,7 @@ closeBtnNav.addEventListener("click", () => {
 
 const overlay = document.querySelector(".content-over");
 const object = document.querySelector(".content-over--open");
+
 if (object) {
     object.addEventListener("mouseenter", () => {
         overlay.style.opacity = "1"
@@ -59,30 +60,32 @@ const infoBookmark = document.getElementById("info--bookmark");
 const infoImages = document.getElementById("info--images");
 const closeBtnBookmark = document.getElementById("btn-close--bookmark");
 const closeBtnImage = document.getElementById("btn-close--images");
-
 const scrollContainer = document.querySelector(".images-wrapper");
 
-window.addEventListener("resize", () => {
-    scrollContainer.scrollTo(0, 0);
-})
-scrollContainer.addEventListener("wheel", (event) => {
-    event.preventDefault();
-    scrollContainer.scrollLeft += event.deltaY;
-});
+if (scrollContainer) {
 
-openBtnBookmark.addEventListener("click", () => {
-    infoBookmark.classList.add("slide");
-});
+    window.addEventListener("resize", () => {
+        scrollContainer.scrollTo(0, 0);
+    })
+    scrollContainer.addEventListener("wheel", (event) => {
+        event.preventDefault();
+        scrollContainer.scrollLeft += event.deltaY;
+    });
 
-closeBtnBookmark.addEventListener("click", () => {
-    infoBookmark.classList.remove("slide");
-});
+    openBtnBookmark.addEventListener("click", () => {
+        infoBookmark.classList.add("slide");
+    });
 
-openBtnImages.addEventListener("click", () => {
-    infoImages.classList.add("slide");
-});
+    closeBtnBookmark.addEventListener("click", () => {
+        infoBookmark.classList.remove("slide");
+    });
 
-closeBtnImage.addEventListener("click", () => {
-    infoImages.classList.remove("slide");
-});
+    openBtnImages.addEventListener("click", () => {
+        infoImages.classList.add("slide");
+    });
 
+    closeBtnImage.addEventListener("click", () => {
+        infoImages.classList.remove("slide");
+    });
+
+};

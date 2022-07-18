@@ -341,10 +341,16 @@ body {
     padding-left: 16vw;
 }
 
+.copy-indent--lower {
+    padding-left: 16vw;
+}
+
 .content--sponsor {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     gap: 24px;
     margin-bottom: 4rem;
 }
@@ -382,6 +388,18 @@ body {
     font-family: "Fira Sans", sans-serif;
     position: relative;
     white-space: nowrap;
+}
+
+.content--agenda {
+    margin-bottom: 8rem;
+}
+
+.content--agenda p {
+    margin: 0;
+}
+
+.agenda--block {
+    margin-bottom: 4rem;
 }
 
 .content--bookmark {

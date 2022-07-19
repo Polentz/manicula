@@ -39,6 +39,7 @@
 }
 
 body {
+    max-width: 1440px;
     overflow-x: hidden;
     background-color: var(--bg-color);
 }
@@ -391,6 +392,7 @@ body {
 }
 
 .content--agenda {
+    width: 50%;
     margin-bottom: 8rem;
 }
 

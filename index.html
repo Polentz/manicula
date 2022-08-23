@@ -41,79 +41,93 @@
         <img src="assets/uploads/manicula-enrico.svg">
         <img src="assets/uploads/manicula-chiara.svg">
     </div>
-    <main class="container container--home">
-        <nav class="nav nav--home">
-            <p id="btn-open--nav" class="nav-link">Cities</p>
-            <p id="contact" class="nav-link"><a href="credits.html">Credits</a></p>
-            <h1 id="site-title" class="nav-link">Manicula</h1>
-            <div id="cms-btn-placeholder">
-                <!-- not empty -->
+
+    <nav class="nav nav--home">
+        <div class="nav-labels-wrapper">
+            <div id="btn-open--nav" class="nav-label">
+                <p class="nav-label-text">Cities</p>
             </div>
-            <div id="nav-content" class="nav-content cms-editable">
-                <ul id="nav-list" class="nav-list cms-include">
-                    <li><a href="pistoia.html">Pistoia</a></li>
-                </ul>
-                <div class="nav-footer">
-                    <p>© 2022 Enrico Malatesta &amp; Chiara Pavolucci</p>
-                </div>
+            <div class="nav-label hide-this">
+                <p class="nav-label-text"><a href="credits.html">Credits</a></p>
             </div>
-            <div id="btn-close--nav" class="btn-close">
+            <div class="nav-label hide-this">
+                <h1 class="nav-label-text"><a href="index.html">Manicula</a></h1>
+            </div>
+        </div>
+
+        <div id="nav-content" class="nav-content-wrapper--home cms-editable">
+            <ul id="nav-list" class="nav-list cms-include">
+                <li><a href="pistoia.html">Pistoia</a></li>
+                <li><a href="bassano-del-grappa.html">Bassano del Grappa</a></li>
+            </ul>
+            <div class="nav-footer">
+                <p>© 2022 Enrico Malatesta &amp; Chiara Pavolucci</p>
+            </div>
+            <div id="btn-close--nav" class="btn-close cms-lock">
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9 1L1 9" stroke="var(--bg-color)" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M9 9L1 1" stroke="var(--bg-color)" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <section id="main-content" class="main-content cms-editable">
-            <div class="content-wrapper--home">
-                <div class="copy-indent--main copytxt--large">
-                    <p class="cms-repeatable">Manicula is an artistic research format aimed at combining practices
-                        involving image and sound in relation with the themes of <mark>city</mark>,
-                        <mark>landscape</mark> and <mark>walking</mark>, with a <mark>calm drift</mark> that connects
-                        different <mark>urban spaces</mark> and <mark>territories</mark> in a common network.
-                    </p>
-                    <p class="cms-repeatable">Manicula consists in a collection of <mark>active listening</mark> and
-                        <mark>observation exercises</mark> aimed at investigating the acoustic and visual phenomena
-                        present in some parts of the city; the areas of activation of the practices are not declared,
-                        but indicated by <a class="content-over--open">reference symbol</a>. The project is a kind of
-                        <mark>treasure hunt</mark>. It does not require the presence and mediation of a
-                        performer/artist/guide and there is no personal interaction. Each individual decides how to
-                        undertake the search for symbols and how to use the available scores to investigate, on the one
-                        hand, the relationship between <mark>sound and space</mark> through the use of the body, voice
-                        or with simple tools and, on the other hand, the observation of <mark>visual phenomena</mark>
-                        related to the movement of light and its interaction with surfaces/layouts of the city.
-                        Manicula also invites people to continue the exploration by enriching it with their own personal
-                        research. No specific knowledge or skills are required to try the proposed exercises.
-                    </p>
-                    <p class="cms-repeatable">Manicula is an <mark>open project</mark> that also includes live
-                        performances, workshop as well as a visual and textual <mark>journal</mark> that documents the
-                        research and the <mark>walking paths</mark> carried out in situ by the authors.
-                    </p>
+    <section id="main-content" class="main-content cms-editable">
+        <div class="content-wrapper--home">
+            <div class="copy-indent--main copytxt--large">
+                <p>Manicula is an artistic research format aimed at combining practices involving image and sound in
+                    relation with the themes of <mark>city</mark>, <mark>landscape</mark> and <mark>walking</mark>, with
+                    a <mark>calm drift</mark> that connects different <mark>urban spaces</mark> and
+                    <mark>territories</mark> in a common network.
+                </p>
+                <p>Manicula consists in a collection of <mark>active listening</mark> and <mark>observation
+                        exercises</mark> aimed at investigating the acoustic and visual phenomena present in some parts
+                    of the city; the areas of activation of the practices are not declared, but indicated by <a
+                        class="content-over--open">reference symbol</a>. The project is a kind of <mark>treasure
+                        hunt</mark>. It does not require the presence and mediation of a performer/artist/guide and
+                    there is no personal interaction. Each individual decides how to undertake the search for symbols
+                    and how to use the available scores to investigate, on the one hand, the relationship between
+                    <mark>sound and space</mark> through the use of the body, voice or with simple
+                    tools and, on the other hand, the observation of <mark>visual phenomena</mark> related to the
+                    movement of light and its interaction with surfaces/layouts of the city. Manicula also invites
+                    people to continue the exploration by enriching it with their own personal research. No specific
+                    knowledge or skills are required to try the proposed exercises.
+                </p>
+                <p>Manicula is an <mark>open project</mark> that also includes live performances, workshop as well as a
+                    visual and textual <mark>journal</mark> that documents the research and the <mark>walking
+                        paths</mark> carried out in situ by the authors.</p>
+            </div>
+            <div class="content--agenda copytxt--large">
+                <div class="agenda--block cms-repeatable">
+                    <p><mark>29.08.2022</mark></p>
+                    <p><a href="https://leserredeigiardini.it/ascolti-verticali/#:~:text=Ascolti%20verticali%20%C3%A8%20un%20palinsesto,orto%20delle%20Serre%20dei%20Giardini."
+                            target="_blank" rel="noopener">Ascolti Verticali – Le Serre</a></p>
+                    <p>Bologna – IT</p>
+                    <p>Walk and Workshop</p>
                 </div>
-                <div class="content--agenda copytxt--large">
-                    <div class="agenda--block cms-repeatable">
-                        <p><mark>18.07.2022</mark></p>
-                        <p>Roadhouse</p>
-                        <p>Twin Peaks (Washington)</p>
-                        <p>Residency</p>
-                    </div>
-                    <div class="agenda--block cms-repeatable">
-                        <p><mark>18.07.2022</mark></p>
-                        <p>Double R Diner</p>
-                        <p>Twin Peaks (Washington)</p>
-                        <p>Performance</p>
-                    </div>
-                    <div class="agenda--block cms-repeatable">
-                        <p><mark>18.07.2022</mark></p>
-                        <p>One Eyed Jacks</p>
-                        <p>Twin Peaks (Washington)</p>
-                        <p>Talk</p>
-                    </div>
+                <div class="agenda--block cms-repeatable">
+                    <p><mark>03.09.2022</mark></p>
+                    <p><a href="https://www.operaestate.it/it/festival/bmotion/musica/3838-enrico-malatesta-chiara-pavolucci"
+                            target="_blank" rel="noopener">OperaEstate Festival</a></p>
+                    <p>Bassano del Grappa – IT</p>
+                    <p>Walk</p>
+                </div>
+                <div class="agenda--block cms-repeatable">
+                    <p><mark>08.10.2022</mark></p>
+                    <p><a href="https://exatr.it/" target="_blank" rel="noopener">EXATR</a> • inloco</p>
+                    <p>Forlì – IT</p>
+                    <p>Talk, walk and workshop</p>
+                </div>
+                <div class="agenda--block cms-repeatable">
+                    <p><mark>1.11.2022</mark></p>
+                    <p>RADICI | Teatro Binario</p>
+                    <p>Cotignola – IT (date tbc)</p>
+                    <p>Talk, walk and workshop</p>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
     <div class="content-over">
         <img src="assets/uploads/manicula-enrico-framed.svg">
         <img src="assets/uploads/manicula-chiara-framed.svg">

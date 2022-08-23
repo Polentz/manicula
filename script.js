@@ -5,42 +5,30 @@ const documentHeight = () => {
 window.addEventListener("resize", documentHeight)
 documentHeight();
 
-const openBtnNav = document.querySelectorAll("#btn-open--nav, #cms-btn-placeholder");
-const closeBtnNav = document.getElementById("btn-close--nav");
-const container = document.querySelector(".container");
-const navLabels = document.querySelectorAll(".nav-link");
-const navContent = document.querySelector(".nav-content")
-const navBlocks = document.querySelectorAll(".content--hidden");
 
-openBtnNav.forEach(btn => {
-    btn.addEventListener("click", () => {
-        container.classList.add("move");
-        navLabels.forEach(label => {
-            label.classList.add("rotate");
-        });
-        navContent.style.display = "flex";
-        setTimeout(() => {
-            navBlocks.forEach(block => {
-                block.style.opacity = "1";
-            });
-        }, 800);
-    });
-});
+const nav = document.querySelector(".nav");
+const openMenu = document.getElementById("btn-open--nav");
+const menuLabels = document.querySelectorAll(".hide-this")
+const main = document.getElementById("main-content");
+const closeMenu = document.getElementById("btn-close--nav");
 
-closeBtnNav.addEventListener("click", () => {
-    navBlocks.forEach(block => {
-        block.style.opacity = "0";
+openMenu.addEventListener("click", () => {
+    nav.classList.add("move-right");
+    main.classList.add("move-right");
+    openMenu.classList.add("rotate");
+    menuLabels.forEach(e => {
+        e.classList.add("hide");
     });
-    container.classList.remove("move");
-    setTimeout(() => {
-        navLabels.forEach(label => {
-            label.classList.remove("rotate");
-        });
-    }, 200);
-    setTimeout(() => {
-        navContent.style.display = "none";
-    }, 800);
-});
+})
+
+closeMenu.addEventListener("click", () => {
+    nav.classList.remove("move-right");
+    main.classList.remove("move-right");
+    openMenu.classList.remove("rotate");
+    menuLabels.forEach(e => {
+        e.classList.remove("hide");
+    });
+})
 
 const overlay = document.querySelector(".content-over");
 const object = document.querySelector(".content-over--open");
